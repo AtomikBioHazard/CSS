@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Montserrat&display=swap');
+
+/* VARS */
+:root {
+  --bg-section-color: #f7f7f7;
+  --bg-accents-color: #100f0f;
+  --font-color-primary: #eeeeee;
+  --font-color-accent: #404258;
+  --link-hover-color: #343434;
+  --news-bg-color: #ececec;
+}
+
+/* GENERALS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--font-color-primary);
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--font-color-primary);
+  text-decoration: none;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.inner-container {
+  padding: 0 50px;
+}
+
+/* HEADER */
+header {
+  background: url('https://placeimg.com/2560/1440/people/sepia') center;
+  background-attachment: contain;
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.menu {
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-flow: row nowrap;
+  height: 6rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.logo {
+  flex: 1 1 auto;
+}
+.logo a {
+  font-size: 3rem;
+}
+
+.nav {
+  flex: 5 1 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.nav a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0 10px;
+  letter-spacing: 0.2rem;
+}
+
+.social {
+  flex: 1 1 auto;
+  display: flex;
+}
+.social a {
+  font-size: 1.8rem;
+  padding: 0 5px;
+}
+
+.logo a:hover,
+.nav a:hover,
+.social a:hover {
+  background: var(--font-color-primary);
+  color: var(--link-hover-color);
+  padding: 20px;
+}
+
+.main-text {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  font-family: 'Lora', serif;
+  font-size: 2vw;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* SECTION */
+section {
+  background: var(--bg-section-color);
+  display: flex;
+}
+
+.articles {
+  flex: 2 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+article {
+  flex: 1 1 40%;
+  /* color: var(--font-color-primary); */
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+  margin: 10px 10px 0 0;
+  flex: 1 1 40%;
+  background: var(--news-bg-color);
+}
+article a {
+  font-size: 1.3rem;
+  padding: 10px;
+  background: var(--bg-accents-color);
+  margin: 10px 0;
+  display: inline-block;
+}
+article a:hover {
+  background: var(--bg-section-color);
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  color: var(--font-color-accent);
+  font-size: 1.5rem;
+}
+article img {
+  width: 100%;
+}
+article h3 {
+  font-size: 1.3rem;
+  padding: 10px 0;
+  margin-top: -80px;
+}
+article h2 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding: 0 0 10px 0;
+}
+article p {
+  color: var(--font-color-accent);
+}
+
+.navigation {
+  background: var(--bg-accents-color);
+  flex: 1 1 100%;
+  margin: 10px 10px 0 0;
+  padding: 3px;
+}
+.navigation a {
+  font-size: 1.3rem;
+  padding: 0 10px;
+}
+.navigation a:hover {
+  font-size: 1.5rem;
+}
+
+aside {
+  flex: 1 1 100%;
+  margin: 10px 5px 10px 0;
+}
+aside img {
+  width: 100%;
+}
+aside h4 {
+  background: var(--bg-accents-color);
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--bg-accents-color);
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.foot {
+  text-align: center;
+  padding: 10px;
+}
+.foot a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 0 10px;
+  letter-spacing: 0.2rem;
+}
+.foot a:hover {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 3px var(--bg-section-color);
+}
+
+/* MEDIA QUERIES */
+@media all and (max-width: 1120px) {
+  .menu {
+    flex-direction: column;
+    height: auto;
+  }
+  section {
+    flex-direction: column;
+  }
+  aside {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 978px) {
+  .off {
+    display: none;
+  }
+  .nav a {
+    font-size: 2.5rem;
+  }
+}
+
+@media all and (max-width: 762px) {
+  .articles {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 400px) {
+  aside {
+    flex-direction: column;
+  }
+}
