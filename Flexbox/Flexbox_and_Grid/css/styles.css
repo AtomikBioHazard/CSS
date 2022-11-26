@@ -1,0 +1,132 @@
+/* GENERAL STYLES */
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 62.5%;
+}
+
+body {
+  background: #1D202D;
+  color: #fff;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, .8);
+  min-height: 100vh;
+  display: flex;
+}
+
+
+/*  MAIN CONTAINER */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+
+/* CARDS CONTAINER */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background-position: center center;
+  background-size: cover;
+  border-radius: 10px;
+  font-weight: bold;
+  min-height: 200px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+}
+
+.card .texts {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100%;
+}
+
+
+/* BANNER */
+
+.banner {
+  align-items: center;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.banner .btn {
+  background: #ffd600;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.banner ul {
+  list-style: none;
+}
+
+.banner ul li {
+  margin: 15px;
+  font-weight: bold;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr auto;
+    gap: 20px;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
